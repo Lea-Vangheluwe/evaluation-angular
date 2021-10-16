@@ -27,5 +27,5 @@ Envoyer moi le lien vers un repository git avec votre code
 ou
 Envoyer-moi votre projet zippé par MP sur Slack (sans le dossier `node_nodules` 😁)
 
-Le but est de montrer ce que vous avez connaisser. Vous pouvez proposer des fonctionnalités non décrites dans la consigne.  
+Le but est de montrer ce que vous connaissez. Vous pouvez proposer des fonctionnalités non décrites dans la consigne.  
 `Bootstrap` est installé
