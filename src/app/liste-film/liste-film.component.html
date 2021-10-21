@@ -1,1 +1,6 @@
-<p>liste-film works!</p>
+{{title}}
+<ul>
+  <li *ngFor="let movie of movies">
+    <app-detail-film></app-detail-film>
+  </li>
+</ul>
