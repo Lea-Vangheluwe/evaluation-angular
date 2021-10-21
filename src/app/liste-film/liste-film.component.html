@@ -1,6 +1,6 @@
 {{title}}
 <ul>
   <li *ngFor="let movie of movies">
-    <app-detail-film></app-detail-film>
+    <app-detail-film [movie]="movie"></app-detail-film>
   </li>
 </ul>
