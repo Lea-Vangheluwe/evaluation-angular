@@ -1,4 +1,6 @@
-<button class="btn btn-danger" (click)="downScore(movie)">-</button>
-<span>{{movie.score}}
+<div class="row">
+<button class="col-2 offset-2 btn btn-danger" (click)="downScore(movie)">-</button>
+<span class="col-4 d-flex justify-content-center align-items-center">{{movie.score}}
 </span>
-<button class="btn btn-success" (click)="upScore(movie)">+</button>
+<button class="col-2 btn btn-success" (click)="upScore(movie)">+</button>
+</div>
