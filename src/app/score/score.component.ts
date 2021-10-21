@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Movie } from '../shared/interfaces/movie';
 import { MoviesService } from '../shared/services/movies.service';
 
@@ -19,17 +19,21 @@ export class ScoreComponent implements OnInit {
     posterUrl: '',
     score: 0
   };
+  @Output() upScoreEvent = new EventEmitter<Movie>();
+  @Output() downScoreEvent = new EventEmitter<Movie>();
 
   constructor(private moviesService: MoviesService) { }
 
   downScore(movie: Movie){
     this.movie.score = this.movie.score-1;
     this.moviesService.updateScore(movie).subscribe()
+    this.downScoreEvent.emit(this.movie);
   }
 
   upScore(movie: Movie){
     this.movie.score = this.movie.score+1;
     this.moviesService.updateScore(movie).subscribe()
+    this.upScoreEvent.emit(this.movie);
   }
 
   ngOnInit(): void {

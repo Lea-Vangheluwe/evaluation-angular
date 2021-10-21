@@ -1,12 +1,15 @@
 <h1>{{title}}</h1>
+<div *ngIf="showAlert" class="alert alert-{{typeAlert}}" role="alert">
+  {{textAlert}} {{movie.title}} !
+</div>
 <div class="row">
   <div *ngFor="let movie of movies" class="card col-2.5 m-2" style="width: 18rem;">
-    <img src={{movie.posterUrl}} class="card-img-top" alt="...">
+    <img src={{movie.posterUrl}} class="card-img-top" alt="Affiche de {{movie.title}}">
     <div class="card-body">
       <h2 class="card-title">{{movie.title}}</h2>
       <app-detail-film [movie]="movie"></app-detail-film>
       <br>
-      <app-score class="col-6 offset-3" [movie]="movie"></app-score>
+      <app-score class="col-6 offset-3" [movie]="movie" (upScoreEvent)=showUpScore($event) (downScoreEvent)=showDownScore($event)></app-score>
     </div>
   </div>
 </div>
