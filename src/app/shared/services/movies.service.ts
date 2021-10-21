@@ -19,11 +19,7 @@ export class MoviesService {
     return this.httpClient.get<Movie[]>(`${environment.serverUrl}/movies`)
   };
 
-  upScore(){
-
-  }
-
-  downScore(){
-
+  updateScore(movie: Movie){
+    return this.httpClient.put<Movie>(`${environment.serverUrl}/movies/${movie.id}`, movie, this.httpOptions)
   }
 }

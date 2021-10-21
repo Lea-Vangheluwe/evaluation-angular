@@ -2,5 +2,7 @@
 <ul>
   <li *ngFor="let movie of movies">
     <app-detail-film [movie]="movie"></app-detail-film>
+    <br>
+    <app-score [movie]="movie"></app-score>
   </li>
 </ul>
