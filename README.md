@@ -14,6 +14,8 @@ Il faudra créer au moins un composant pour la liste et un composant pour un fil
 
 ## Débuter avec ce squelette
 
+- Cloner ce repository `git clone https://framagit.org/adrienpessu/angular-evaluation.git`
+- `cd angular-evaluation`
 - Installer les dépendances : 
 `npm install`
 - Lancer l'application Angular : 
