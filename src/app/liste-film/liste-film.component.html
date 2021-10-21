@@ -1,14 +1,24 @@
+<!-- TItre de la page -->
 <h1>{{title}}</h1>
+
+<!-- Bandeau "d'alerte" en cas de suppression ou ajout de points -->
 <div *ngIf="showAlert" class="alert alert-{{typeAlert}}" role="alert">
   {{textAlert}} {{movie.title}} !
 </div>
+
 <div class="row">
+  <!-- Cards bootstraps contenant chacune un film -->
   <div *ngFor="let movie of movies" class="card col-2.5 m-2" style="width: 18rem;">
+    <!-- Poster du film -->
     <img src={{movie.posterUrl}} class="card-img-top" alt="Affiche de {{movie.title}}">
+    <!-- Body de la card -->
     <div class="card-body">
+      <!-- Titre du film -->
       <h2 class="card-title">{{movie.title}}</h2>
+      <!-- Appel au composant comprenant le résumé et l'année -->
       <app-detail-film [movie]="movie"></app-detail-film>
       <br>
+      <!-- Appel au composant permettant la gestion des scores du film -->
       <app-score class="col-6 offset-3" [movie]="movie" (upScoreEvent)=showUpScore($event) (downScoreEvent)=showDownScore($event)></app-score>
     </div>
   </div>

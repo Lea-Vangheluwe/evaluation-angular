@@ -21,12 +21,14 @@ export class ListeFilmComponent implements OnInit {
     posterUrl: '',
     score: 0
   };
-showAlert: boolean = false;
-typeAlert: string = '';
-textAlert: string = '';
+  // Gestion des alertes
+  showAlert: boolean = false;
+  typeAlert: string = '';
+  textAlert: string = '';
 
   constructor(private moviesService: MoviesService) { }
 
+  // Alerte d'augmentation du score
   showUpScore(movie: Movie){
     this.movie = movie;
     this.showAlert = true;
@@ -34,6 +36,7 @@ textAlert: string = '';
     this.textAlert = 'Vous avez augmenté le score de'
   }
 
+  // Alerte de diminution du score
   showDownScore(movie: Movie){
     this.movie = movie;
     this.showAlert = true;

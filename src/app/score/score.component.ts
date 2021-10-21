@@ -8,6 +8,7 @@ import { MoviesService } from '../shared/services/movies.service';
   styleUrls: ['./score.component.scss']
 })
 export class ScoreComponent implements OnInit {
+  //Reception du film
   @Input() movie: Movie = {
     id: 0,
     title: '',
@@ -19,17 +20,20 @@ export class ScoreComponent implements OnInit {
     posterUrl: '',
     score: 0
   };
+  //Evenements
   @Output() upScoreEvent = new EventEmitter<Movie>();
   @Output() downScoreEvent = new EventEmitter<Movie>();
 
   constructor(private moviesService: MoviesService) { }
 
+  // Méthode enlevant un point au film
   downScore(movie: Movie){
     this.movie.score = this.movie.score-1;
     this.moviesService.updateScore(movie).subscribe()
     this.downScoreEvent.emit(this.movie);
   }
 
+  // Méthode ajoutant un point au film
   upScore(movie: Movie){
     this.movie.score = this.movie.score+1;
     this.moviesService.updateScore(movie).subscribe()
