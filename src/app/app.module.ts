@@ -4,15 +4,19 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ListeFilmComponent } from './liste-film/liste-film.component';
+import { HttpClientModule } from '@angular/common/http';
+import { DetailFilmComponent } from './detail-film/detail-film.component':
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListeFilmComponent
+    ListeFilmComponent,
+    DetailFilmComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
