@@ -1,8 +1,12 @@
-{{title}}
-<ul>
-  <li *ngFor="let movie of movies">
-    <app-detail-film [movie]="movie"></app-detail-film>
-    <br>
-    <app-score [movie]="movie"></app-score>
-  </li>
-</ul>
+<h1>{{title}}</h1>
+<div class="row">
+  <div *ngFor="let movie of movies" class="card col-2.5 m-2" style="width: 18rem;">
+    <img src={{movie.posterUrl}} class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2 class="card-title">{{movie.title}}</h2>
+      <app-detail-film [movie]="movie"></app-detail-film>
+      <br>
+      <app-score [movie]="movie"></app-score>
+    </div>
+  </div>
+</div>
