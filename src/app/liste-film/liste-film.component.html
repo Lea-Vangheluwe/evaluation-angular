@@ -1,7 +1,7 @@
 <!-- TItre de la page -->
 <h1>{{title}}</h1>
 
-<!-- Bandeau "d'alerte" en cas de suppression ou ajout de points -->
+<!-- Bandeau "d'alerte" en cas de suppression/ajout de points ou suppression de film -->
 <div *ngIf="showAlert" class="alert alert-{{typeAlert}}" role="alert">
   {{textAlert}} {{movie.title}} !
 </div>
@@ -11,7 +11,9 @@
   <div *ngFor="let movie of movies" class="card col-2.5 m-2" style="width: 18rem;">
     <!-- Poster du film -->
     <img src={{movie.posterUrl}} class="card-img-top" alt="Affiche de {{movie.title}}">
+    <app-suppression-film (deleteMovieEvent)="deleteMovieAlert($event)" [movie]="movie"></app-suppression-film>
     <!-- Body de la card -->
+
     <div class="card-body">
       <!-- Titre du film -->
       <h2 class="card-title">{{movie.title}}</h2>

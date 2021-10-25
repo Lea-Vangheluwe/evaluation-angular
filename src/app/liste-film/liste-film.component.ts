@@ -33,15 +33,23 @@ export class ListeFilmComponent implements OnInit {
     this.movie = movie;
     this.showAlert = true;
     this.typeAlert = 'success';
-    this.textAlert = 'Vous avez augmenté le score de'
+    this.textAlert = 'Vous avez augmenté le score de '
   }
 
   // Alerte de diminution du score
   showDownScore(movie: Movie){
     this.movie = movie;
     this.showAlert = true;
+    this.typeAlert = 'warning';
+    this.textAlert = 'Vous avez baissé le score de '
+  }
+
+  deleteMovieAlert(movie: Movie){
+    this.movie = movie;
+    this.movies = this.movies.filter(deletedMovie => deletedMovie.id != movie.id);
+    this.showAlert = true;
     this.typeAlert = 'danger';
-    this.textAlert = 'Vous avez baissé le score de'
+    this.textAlert = 'Vous avez supprimé '
   }
 
   ngOnInit(): void {

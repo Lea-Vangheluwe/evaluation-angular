@@ -9,6 +9,8 @@ import { DetailFilmComponent } from './detail-film/detail-film.component';
 import { ScoreComponent } from './score/score.component';
 import { HomeComponent } from './home/home.component';
 import { AjoutFilmComponent } from './ajout-film/ajout-film.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SuppressionFilmComponent } from './suppression-film/suppression-film.component';
 
 @NgModule({
   declarations: [
@@ -17,12 +19,14 @@ import { AjoutFilmComponent } from './ajout-film/ajout-film.component';
     DetailFilmComponent,
     ScoreComponent,
     HomeComponent,
-    AjoutFilmComponent
+    AjoutFilmComponent,
+    SuppressionFilmComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
